@@ -14,7 +14,7 @@ const NewsContainer = ({ articles }) => {
     />
   ))
 
-  return <div  className="articles-container">{newsArticles}</div>
+  return <main className="articles-container">{newsArticles}</main>
 }
 
 export default NewsContainer;
