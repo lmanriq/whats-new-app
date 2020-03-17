@@ -17,7 +17,7 @@ class App extends Component {
       health,
       science,
       technology,
-      selectedTopic: local
+      selectedTopic: 'local'
     }
   }
 
