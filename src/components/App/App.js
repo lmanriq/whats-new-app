@@ -4,6 +4,7 @@ import entertainment from '../../data/entertainment';
 import health from '../../data/health';
 import science from '../../data/science';
 import technology from '../../data/technology';
+import Menu from '../Menu/Menu.js'
 import NewsContainer from '../NewsContainer/NewsContainer.js'
 import './App.css';
 
@@ -23,6 +24,38 @@ class App extends Component {
     return (
       <div className="app">
         <h1>Da Newz</h1>
+        <Menu 
+          local = {
+            {
+              contents: this.state.local,
+              key: 1
+            }
+          }
+          entertainment={
+            {
+              contents: this.state.entertainment,
+              key: 2
+            }
+          }
+          health={
+            {
+              contents: this.state.health,
+              key: 3
+            }
+          }
+          science={
+            {
+              contents: this.state.science,
+              key: 4
+            }
+          }
+          technology={
+            {
+              contents: this.state.technology,
+              key: 5
+            }
+          }
+        />
         <NewsContainer 
           articles={this.state.local}
         />
