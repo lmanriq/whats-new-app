@@ -5,13 +5,15 @@ class Menu extends Component {
   constructor() {
     super();
     this.state = {
-      isCool: true
+      topic: null
     }
   }
 
   render() {
-    const labels = Object.keys(this.props).map(prop => (
-      <button key={this.props[prop].key}>{prop}</button>
+    const labels = Object.keys(this.props.topics).map(topic => (
+      <button key={this.props.topics[topic].key}
+              onClick={this.props.filterTopic(topic)}>
+              {topic}</button>
     ))
 
     return (
@@ -19,10 +21,6 @@ class Menu extends Component {
         {labels}
       </nav>
     )
-  }
-
-  filterTopics() {
-
   }
 }
 
