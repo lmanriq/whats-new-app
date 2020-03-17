@@ -1,3 +1,12 @@
+.article {
+  background-color: #fcfcba;
+  border: 2px solid #994D64;
+  display: inline-block;
+  margin: 0 0 1em;
+  width: 100%;
+  padding: 0.5em;
+}
+
 .article img {
-  width: 100px;
+  width: 80%
 }
