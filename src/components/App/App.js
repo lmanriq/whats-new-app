@@ -4,6 +4,7 @@ import entertainment from '../../data/entertainment';
 import health from '../../data/health';
 import science from '../../data/science';
 import technology from '../../data/technology';
+import NewsContainer from '../NewsContainer/NewsContainer.js'
 import './App.css';
 
 class App extends Component {
@@ -22,7 +23,9 @@ class App extends Component {
     return (
       <div className="app">
         <h1>Da Newz</h1>
-        <NewsContainer />
+        <NewsContainer 
+          articles={this.state.local}
+        />
       </div>
     );
   }
