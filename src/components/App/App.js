@@ -28,34 +28,36 @@ class App extends Component {
   render () {
     return (
       <div className="app">
-        <h1>Da Newz</h1>
-        <Menu 
-          topics = {
-            {
-              local: {
-                contents: this.state.local,
-                key: 1
-              },
-              entertainment: {
-                contents: this.state.entertainment,
-                key: 2
-              },
-              health: {
-                contents: this.state.health,
-                key: 3
-              },
-              science: {
-                contents: this.state.science,
-                key: 4
-              },
-              technology: {
-                contents: this.state.technology,
-                key: 5
+        <header>
+          <h1>Da Newz</h1>
+          <Menu 
+            topics = {
+              {
+                local: {
+                  contents: this.state.local,
+                  key: 1
+                },
+                entertainment: {
+                  contents: this.state.entertainment,
+                  key: 2
+                },
+                health: {
+                  contents: this.state.health,
+                  key: 3
+                },
+                science: {
+                  contents: this.state.science,
+                  key: 4
+                },
+                technology: {
+                  contents: this.state.technology,
+                  key: 5
+                }
               }
             }
-          }
-          filterTopic = {this.filterTopic}
-        />
+            filterTopic = {this.filterTopic}
+          />
+        </header>
         <NewsContainer 
           articles={this.state[this.state.selectedTopic]}
         />

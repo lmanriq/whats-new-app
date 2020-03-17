@@ -2,12 +2,21 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #141527;
 }
 
 .app {
   display: flex;
   background: #141527;
-  height: 100vh;
   text-align: center;
   width: 100%;
+}
+
+header {
+  width: 15em;
+  margin: 1em;
+}
+
+h1 {
+  color: #FBB15E;
 }
