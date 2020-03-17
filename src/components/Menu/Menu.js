@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Menu.css'
 
 class Menu extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
       topic: null
@@ -10,15 +10,15 @@ class Menu extends Component {
   }
 
   render() {
-    const labels = Object.keys(this.props.topics).map(topic => (
+    const buttons = Object.keys(this.props.topics).map(topic => (
       <button key={this.props.topics[topic].key}
-              onClick={this.props.filterTopic(topic)}>
+              onClick={() => this.props.filterTopic(topic)}>
               {topic}</button>
     ))
 
     return (
       <nav>
-        {labels}
+        {buttons}
       </nav>
     )
   }
