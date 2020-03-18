@@ -17,6 +17,6 @@ header {
   margin: 1em;
 }
 
-h1 {
+h1, label {
   color: #FBB15E;
 }

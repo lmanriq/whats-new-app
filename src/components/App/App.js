@@ -5,6 +5,7 @@ import health from '../../data/health';
 import science from '../../data/science';
 import technology from '../../data/technology';
 import Menu from '../Menu/Menu.js'
+import Form from '../Form/Form.js'
 import NewsContainer from '../NewsContainer/NewsContainer.js'
 import './App.css';
 
@@ -17,12 +18,23 @@ class App extends Component {
       health,
       science,
       technology,
-      selectedTopic: 'local'
+      all: [...local, ...entertainment, ...health, ...science, ...technology],
+      selectedTopic: local
     }
   }
 
   filterTopic = (topic) => {
-    this.setState({selectedTopic: topic})
+    if (this.state[topic]) {
+      this.setState({selectedTopic: this.state[topic]})
+    } else {
+      const searchedArticles = this.state.all.filter(article => {
+        const headline = article.headline.toLowerCase();
+        const description = article.description.toLowerCase();
+        topic = topic.toLowerCase();
+        return headline.includes(topic) || description.includes(topic)
+      });
+      this.setState({selectedTopic: searchedArticles});
+    }
   }
 
   render () {
@@ -57,9 +69,12 @@ class App extends Component {
             }
             filterTopic = {this.filterTopic}
           />
+          <Form 
+            filterTopic={this.filterTopic}
+          />
         </header>
         <NewsContainer 
-          articles={this.state[this.state.selectedTopic]}
+          articles={this.state.selectedTopic}
         />
       </div>
     );
