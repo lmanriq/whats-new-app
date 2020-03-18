@@ -23,10 +23,18 @@ class Form extends Component {
           placeholder="Search Articles"
           value={this.state.search}
           onChange={this.updateState}
+          onKeyDown={(e) => {
+            if (e.keyCode === 13) {
+              e.preventDefault();
+              this.props.filterTopic(this.state.search);
+              return false;
+            }
+          }}
         />
         <button
           type="button"
-          onClick={() => this.props.filterTopic(this.state.search)}>
+          onClick={() => this.props.filterTopic(this.state.search)}
+          >
           <img src={require(`../../icons/search-icon.svg`)} alt="search icon"/> 
         </button>
       </form>
