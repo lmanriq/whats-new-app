@@ -4,3 +4,10 @@
   column-gap: 1em;
   margin: 1em;
 }
+
+h5 {
+  color: #FBB15E;
+  text-align: center;
+  font-size: 3em;
+  margin: 2em 0;
+}
