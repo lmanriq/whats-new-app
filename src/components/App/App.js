@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import local from '../../data/local';
-// import entertainment from '../../data/entertainment';
-// import health from '../../data/health';
-// import science from '../../data/science';
-// import technology from '../../data/technology';
 import Menu from '../Menu/Menu.js'
 import Form from '../Form/Form.js'
 import NewsContainer from '../NewsContainer/NewsContainer.js'
@@ -14,11 +9,6 @@ class App extends Component {
     super();
     this.state = {
       data: null,
-      // local: null,
-      // entertainment: null,
-      // health: null,
-      // science: null,
-      // technology: null,
       selectedTopic: null
     }
   }
