@@ -7,6 +7,11 @@
   padding: 0.5em;
 }
 
+h3 {
+  color: #994D64;
+}
+
 .article img {
+  margin: 1em 0;
   width: 80%
 }
