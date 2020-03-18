@@ -16,6 +16,7 @@ class Form extends Component {
   render() {
     return (
       <form>
+        <label>Search...</label>
         <input 
           title="search"
           type="text"
@@ -24,7 +25,8 @@ class Form extends Component {
           onChange={this.updateState}
         />
         <button
-          onClick={}>
+          type="button"
+          onClick={() => this.props.filterTopic(this.state.search)}>
           <img src={require(`../../icons/search-icon.svg`)} alt="search icon"/> 
         </button>
       </form>
