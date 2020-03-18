@@ -1,0 +1,19 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form input {
+  height: 3em;
+  margin: 1em 0;
+  text-align: center;
+}
+
+form button {
+  width: 3em;
+  height: 3em;
+  border-radius: 100%;
+  padding: 0.2em;
+}
