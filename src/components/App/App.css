@@ -20,3 +20,8 @@ header {
 h1, label {
   color: #FBB15E;
 }
+
+h1, h3 {
+  font-family: 'Sen', sans-serif;
+  font-weight: 800;
+}
