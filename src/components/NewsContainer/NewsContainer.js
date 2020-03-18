@@ -13,8 +13,9 @@ const NewsContainer = ({ articles }) => {
       url={article.url}
     />
   ))
-
-  return <main className="articles-container">{newsArticles}</main>
+  
+  const content = newsArticles.length ? newsArticles : <h5>No Stories Found</h5>
+  return <main className="articles-container">{content}</main>
 }
 
 export default NewsContainer;
