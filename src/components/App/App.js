@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import local from '../../data/local';
-import entertainment from '../../data/entertainment';
-import health from '../../data/health';
-import science from '../../data/science';
-import technology from '../../data/technology';
 import Menu from '../Menu/Menu.js'
 import Form from '../Form/Form.js'
 import NewsContainer from '../NewsContainer/NewsContainer.js'
@@ -13,21 +8,26 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      local,
-      entertainment,
-      health,
-      science,
-      technology,
-      all: [...local, ...entertainment, ...health, ...science, ...technology],
-      selectedTopic: local
+      data: null,
+      selectedTopic: null
     }
   }
 
+  componentDidMount() {
+    fetch('https://whats-new-api.herokuapp.com/api/v1/news')
+      .then(response => response.json())
+      .then(data => this.setState({ data, selectedTopic: data.local }))
+      .catch(err => console.log(err.message));
+  }
+
   filterTopic = (topic) => {
-    if (this.state[topic]) {
-      this.setState({selectedTopic: this.state[topic]})
+    if (this.state.data[topic]) {
+      this.setState({selectedTopic: this.state.data[topic]})
     } else {
-      const searchedArticles = this.state.all.filter(article => {
+      const allArticles = Object.keys(this.state.data).reduce((list, topic) => {
+        return [...list, ...this.state.data[topic]];
+      }, [])
+      const searchedArticles = allArticles.filter(article => {
         const headline = article.headline.toLowerCase();
         const description = article.description.toLowerCase();
         topic = topic.toLowerCase();
