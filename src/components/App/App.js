@@ -27,10 +27,13 @@ class App extends Component {
     if (this.state[topic]) {
       this.setState({selectedTopic: this.state[topic]})
     } else {
-      const searchedArtciles = this.state.all.filter(article => {
-        return article.headline.includes(topic) || article.description.includes(topic)
+      const searchedArticles = this.state.all.filter(article => {
+        const headline = article.headline.toLowerCase();
+        const description = article.description.toLowerCase();
+        topic = topic.toLowerCase();
+        return headline.includes(topic) || description.includes(topic)
       });
-      this.setState({selectedTopic: searchedArtciles});
+      this.setState({selectedTopic: searchedArticles});
     }
   }
 
