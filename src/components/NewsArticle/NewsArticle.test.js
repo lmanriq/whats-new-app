@@ -5,17 +5,20 @@ import '@testing-library/jest-dom'
 
 describe ('NewsArticle', () => {
   it('renders text that we expect', () => {
-    // Setup
-    // Render the component and pass it props that it needs
-    const { getByText } = render(<NewsArticle 
+    const headline = 'Florida Man Gets Eaten By Gators';
+    const imgUrl = 'https://www.rollingstone.com/scary-gator-photo';
+    const description = 'Gary "the Gator Man" Gorbichov gets ruthlesslessy mauled to death by King K. Rool and his cronies';
+    const articleURL = 'https://www.rollingstone.com/scary-gator-story';
+    const { getByText, getByAltText } = render(<NewsArticle 
         id={5}
         key={5}
-        headline={'Florida Man Gets Eaten By Gators'}
-        img={'https://www.rollingstone.com/scary-gator-photo'}
-        description={'Gary "the Gator Man" Gorbichov gets ruthlesslessy mauled to death by King K. Rool and his cronies'}
-        url={'https://www.rollingstone.com/scary-gator-story'}
+        headline={headline}
+        img={imgUrl}
+        description={description}
+        url={articleURL}
       />)
-    // const labelEl = getByText('Search...');
-    // expect(labelEl).toBeInTheDocument();
+    expect(getByText(headline)).toBeInTheDocument();
+    expect(getByText(description)).toBeInTheDocument();
+    expect(getByAltText(headline + ' photo')).toBeInTheDocument();
   })
 })
