@@ -32,6 +32,7 @@ class Form extends Component {
           }}
         />
         <button
+          data-testid="search-btn"
           type="button"
           onClick={() => this.props.filterTopic(this.state.search)}
           >

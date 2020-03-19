@@ -41,7 +41,7 @@ class App extends Component {
     return (
       <div className="app">
         <header>
-          <h1>Da Newz</h1>
+          <h1>Newsable</h1>
           <Menu 
             topics = {
               {
