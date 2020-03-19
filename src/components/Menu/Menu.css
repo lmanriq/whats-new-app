@@ -19,6 +19,7 @@ nav button img {
 
 nav button:hover,
 .active {
+  cursor: pointer;
   background-color: rgb(95, 48, 62);
   color: #FBB15E;
 }
