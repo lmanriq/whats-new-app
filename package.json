@@ -1,4 +1,5 @@
 {
+  "homepage": "http://lmanriq.github.io/whats-new-app",
   "name": "whats-new",
   "version": "0.1.0",
   "private": true,
@@ -8,6 +9,8 @@
     "react-scripts": "3.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -30,6 +33,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.1.1",
-    "@testing-library/react": "^10.0.1"
+    "@testing-library/react": "^10.0.1",
+    "gh-pages": "^2.2.0"
   }
 }
